@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "clark hinchcliff",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon server/app.js"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
@@ -14,7 +17,9 @@
     "webpack-cli": "^2.0.14"
   },
   "dependencies": {
+    "connect": "^3.6.6",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react-dom": "^16.3.1",
+    "react-google-maps": "^9.4.5"
   }
 }
