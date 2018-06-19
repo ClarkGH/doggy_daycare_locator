@@ -20,17 +20,33 @@ const MyMapComponent = compose(
   </GoogleMap>)
 
 
-class App extends React.Component {
-  constructor (props) {
-    super (props);
+class App extends React.PureComponent {
+  state = {
+    isMarkerShown: false,
   }
 
-  render () {
+  componentDidMount() {
+    this.delayedShowMarker()
+  }
+
+  delayedShowMarker = () => {
+    setTimeout(() => {
+      this.setState({ isMarkerShown: true })
+    }, 3000)
+  }
+
+  handleMarkerClick = () => {
+    this.setState({ isMarkerShown: false })
+    this.delayedShowMarker()
+  }
+
+  render() {
     return (
-      <div>
-        <MyMapComponent isMarkerShown />
-      </div>
-    );
+      <MyMapComponent
+        isMarkerShown={this.state.isMarkerShown}
+        onMarkerClick={this.handleMarkerClick}
+      />
+    )
   }
 }
 
