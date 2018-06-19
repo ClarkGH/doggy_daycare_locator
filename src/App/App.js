@@ -21,7 +21,7 @@ const MyMapComponent = compose(
 
 
 class App extends React.PureComponent {
-  state = {
+  this.state = {
     isMarkerShown: false,
   }
 
